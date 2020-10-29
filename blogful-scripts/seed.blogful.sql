@@ -1,0 +1,22 @@
+INSERT INTO blogful_articles (title, date_published, content)
+VALUES
+  ('Arrow functions', now() - '21 days'::INTERVAL, 'const sample = () =>{}'),
+  ('Knex', now() - '20 days'::INTERVAL, 'Knex allows us t write queries within js'),
+  ('React', now() - '19 days'::INTERVAL, 'React is an awesome js framework!'),
+  ('Nodejs', now() - '18 days'::INTERVAL, 'You can be a backend coding guri with Nodejs!'),
+  ('Postman', now() - '17 days'::INTERVAL, 'Postman is an aweosome tool to test APIs!'),
+  ('SQL', now() - '16 days'::INTERVAL, 'Coding language that allows us to query databases!'),
+  ('HTML', now() - '15 days'::INTERVAL, 'Hypertext Markup Language'),
+  ('CSS', now() - '14 days'::INTERVAL, 'Cascading Style Sheets'),
+  ('JS', now() - '13 days'::INTERVAL, 'JavaScript'),
+  ('Git', now() - '12 days'::INTERVAL, 'Version control system'),
+  ('Github', now() - '11 days'::INTERVAL, 'Remote version control management'),
+  ('Mocha', now() - '10 days'::INTERVAL, 'Testing framework for JavaScript'),
+  ('Smoke test', now() - '9 days'::INTERVAL, 'Checks whether component rendered properly'),
+  ('Snapshot test', now() - '8 days'::INTERVAL, 'Compares UI component to reference snapshot'),
+  ('Jest', now() - '7 days'::INTERVAL, 'JavaScript testing frameworm designed to ensure correctness of any JavaScript codebase'),
+  ('Context', now() - '6 days'::INTERVAL, 'React feature adressing prop-drilling problem'),
+  ('Chai', now() - '5 days'::INTERVAL, 'Assertion library for node'),
+  ('Seed', now() - '4 days'::INTERVAL, 'Sample data to populate an sql table'),
+  ('Nodemon', now() - '3 days'::INTERVAL, 'tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected'),
+  ('Dbeaver', now() - '2 days'::INTERVAL, 'Graphical user interface to view databases and tables');
