@@ -27,7 +27,7 @@ const searchByName = (searchTerm) =>{
       console.log(result)
     })
 }
-//searchByName(searchTerm)
+searchByName(searchTerm)
 
 const paginateProducts = (pageNumber) =>{
   const productsPerPage = 6
@@ -55,7 +55,7 @@ const itemsAfterDate = (daysAgo) =>{
       console.log(result)
     })
 }
-//itemsAfterDate(5)
+itemsAfterDate(5)
 
 const totalCostPerCategory = () =>{
   knexInstance
@@ -69,5 +69,5 @@ const totalCostPerCategory = () =>{
 
 }
 
-//totalCostPerCategory()
+totalCostPerCategory()
 console.log('knex and driver installed correctly')
