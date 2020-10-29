@@ -80,7 +80,7 @@ function mostPopularVideosForDays(days) {
 mostPopularVideosForDays(30)
 
 console.log(qry)
-
+console.log(process.env.PORT)
 console.log( 'knex and driver installed correctly');
 //echo "console.log('hello, practice')" >> ./src/practice.js
 //node ./src/practice.js

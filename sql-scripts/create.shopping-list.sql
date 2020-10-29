@@ -12,5 +12,5 @@ CREATE TABLE IF NOT EXISTS shopping_list(
   price decimal(12,2) NOT NULL,
   date_added TIMESTAMP DEFAULT now() NOT NULL,
   checked BOOLEAN DEFAULT false NOT NULL,
-  category department NOT NULL
+  category grocery NOT NULL
 );
