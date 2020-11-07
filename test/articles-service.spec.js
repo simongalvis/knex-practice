@@ -31,25 +31,32 @@ describe(`Articles service object`, function(){
   })
 
   before(() => db('blogful_articles').truncate())
+  afterEach(() => db('blogful_articles').truncate())
 
-  before(() => {
-     return db
-       .into('blogful_articles')
-       .insert(testArticles)
-   })
+  after(() => db.destroy())
 
-   after(() => db.destroy())
 
-  describe(`getAllArticles()`, () =>{
-    it(`resolves all articles from 'blogful_articles' table`, () =>{
-      return ArticlesService.getAllArticles(db)
-       .then(actual => {
-         expect(actual).to.eql(testArticles.map(article => ({
-           ...article,
-           date_published: new Date(article.date_published)
-         })))
+
+   context(`Given 'blogful_articles' has data`, () => {
+      before(() => {
+        return db
+          .into('blogful_articles')
+          .insert(testArticles)
+      })
+      it(`getAllArticles() resolves all articles from 'blogful_articles' table`, () => {
+            return ArticlesService.getAllArticles(db)
+              .then(actual => {
+                expect(actual).to.eql(testArticles)
+              })
+          })
+        })
+
+        context(`Given 'blogful_articles' has no data`, () => {
+         it(`getAllArticles() resolves an empty array`, () => {
+           return ArticlesService.getAllArticles(db)
+             .then(actual => {
+               expect(actual).to.eql([])
+             })
+         })
        })
-
-    })
-  })
 })
