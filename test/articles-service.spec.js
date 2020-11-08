@@ -68,6 +68,22 @@ afterEach(() => db('blogful_articles').truncate())
            expect(allArticles).to.eql(expected)
          })
      })
+     it(`updateArticle() updates an article from the 'blogful_articles' table`, () => {
+       const idOfArticleToUpdate = 3
+       const newArticleData = {
+         title: 'updated title',
+         content: 'updated content',
+         date_published: new Date(),
+       }
+       return ArticlesService.updateArticle(db, idOfArticleToUpdate, newArticleData)
+         .then(() => ArticlesService.getById(db, idOfArticleToUpdate))
+         .then(article => {
+           expect(article).to.eql({
+             id: idOfArticleToUpdate,
+             ...newArticleData,
+           })
+         })
+     })
 })
 
 context(`Given 'blogful_articles' has no data`, () => {
